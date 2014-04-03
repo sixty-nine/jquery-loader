@@ -7,7 +7,7 @@ A simple library to load the latest version of jQuery via a Javascript call.
 This script will load the latest version of jQuery and then call a callback function. If jQuery is already loaded the script will just execute the callback.
 
 
-```
+```html
   <script type="text/javascript" src="jquery-loader.js"></script>
   <script type="text/javascript">
 
