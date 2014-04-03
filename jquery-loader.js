@@ -1,6 +1,10 @@
+/*global jQuery, document, setTimeout, SixtyNine */
+
 var SixtyNine = SixtyNine || {};
 
 SixtyNine.jQueryLoader = (function () {
+
+    "use strict";
 
     var jQueryUrl = "http://code.jquery.com/jquery-latest.min.js ";
 
@@ -30,7 +34,7 @@ SixtyNine.jQueryLoader = (function () {
          * Load jQuery if it has not yet been loaded
          */
         loadJQuery: function (callback) {
-            if (typeof jQuery == 'undefined') {
+            if (typeof jQuery === 'undefined') {
                 this.loadScript(this.getScriptTag(jQueryUrl));
             }
             this.waitForJQuery(callback);
@@ -41,8 +45,8 @@ SixtyNine.jQueryLoader = (function () {
          * @param callback The callback function
          */
         waitForJQuery: function (callback) {
-            if (typeof jQuery == 'undefined'){
-                setTimeout(function () { SixtyNine.jQueryLoader.waitForJQuery(callback) }, 50);
+            if (typeof jQuery === 'undefined') {
+                setTimeout(function () { SixtyNine.jQueryLoader.waitForJQuery(callback); }, 50);
             } else {
                 callback();
             }
@@ -50,5 +54,4 @@ SixtyNine.jQueryLoader = (function () {
 
     };
 
-})();
-
+}());
